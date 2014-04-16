@@ -1,0 +1,17 @@
+{
+  "name": "proxy-watcher",
+  "version": "0.0.1",
+  "description": "Companion process that listens to etcd for updates and reloads your load balancer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean McGary <sean@seanmcgary.com>",
+  "license": "MIT",
+  "dependencies": {
+  	"lodash": "2.4.1",
+  	"node-etcd": "2.1.0",
+  	"q": "1.0.1",
+  	"logsimple": "*"
+  }
+}
