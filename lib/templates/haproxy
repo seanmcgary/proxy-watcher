@@ -1,0 +1,3 @@
+<% _.each(nodes, function(node, index){ %>
+	server node<%= index %> <%= node.host %>:<%= node.port %> cookie A check
+<% }); %>

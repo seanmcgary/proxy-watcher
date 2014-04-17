@@ -12,6 +12,7 @@
   	"lodash": "2.4.1",
   	"node-etcd": "2.1.0",
   	"q": "1.0.1",
-  	"logsimple": "*"
+  	"logsimple": "*",
+  	"async": "0.7.0"
   }
 }
