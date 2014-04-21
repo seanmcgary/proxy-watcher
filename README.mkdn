@@ -1,0 +1,39 @@
+## proxy-watcher
+
+Proxy-watcher is a NodeJS module that is designed to be deployed with a load balancer to listen
+for nodes joining and leaving the cluster.
+
+Proxy-watcher works by watching a key through [etcd](https://github.com/coreos/etcd), creating an updated config, and reloading your load balancer automatically. When looking at nodes in etcd, it expects the following structure as the value (as a JSON string)
+
+```
+{
+	host: 'my-nodes-hostname-or-ip-address',
+	port: 1234
+}
+```
+
+## Environment Variables/Config
+
+```
+# etcd node to connect to
+PROXY_WATCHER_ETCD_CLUSTER_HOST="127.0.0.1"
+PROXY_WATCHER_ETCD_CLUSTER_PORT="4001"
+
+# the path/key to watch in etcd
+PROXY_WATCHER_ETCD_PATH="/some_dir"
+
+# the config file to write out to
+PROXY_WATCHER_CONFIG_PATH="/etc/haproxy/haproxy.conf"
+
+# the command used to reload your proxy/load balancer
+PROXY_WATCHER_RELOAD_COMMAND="sudo service haproxy reload"
+```
+
+## Running proxy watcher
+
+```
+node proxy-watcher <path to config template>
+
+```
+
+
